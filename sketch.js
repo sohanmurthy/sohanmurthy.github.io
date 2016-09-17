@@ -6,6 +6,6 @@ function setup() {
 function draw() {
   background(204);
   for (var i = 20; i < 400; i += 60) {
-    line( i, 40, i + 60, 80);
+    line( i, 40, i + 60, 20);
   }
 }
