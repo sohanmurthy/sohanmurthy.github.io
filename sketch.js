@@ -5,20 +5,9 @@ function setup() {
 
 function draw() {
   background(204);
-  for (var i = 20; i < window.innerWidth; i += 60) {
-    line( i, 80, i + 60, 20);
-  }
-  for (var i = 20; i < window.innerWidth; i += 60) {
-    line( i, 160, i + 60, 100);
-  }
-  for (var i = 20; i < window.innerWidth; i += 60) {
-    line( i, 240, i + 60, 180);
+  for (var x = 20; x < width-30; x += 60) {
+    for (var y = 80; y < height-20; y += 80) {
+    line( x, y, x + 60, y - 60);
+    }
   }
 }
-
-// function draw() {
-//   background(204);
-//   for (var i = 20; i < window.innerWidth; i += 60) {
-//     line( i, 160, i + 60, 100);
-//   }
-// }
