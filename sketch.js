@@ -6,7 +6,7 @@ function setup() {
 }
 
 function draw() {
-//bottom-to-top
+//lines that start bottom-to-top
   for (var x = 20; x < width-30; x += 60) {
     for (var y = 80; y < height-20; y += 80) {
       var r = random(0,50);
@@ -16,7 +16,7 @@ function draw() {
     line( x, y, x + 60, y - 60);
     }
   }
-//top-to-bottom
+//lines that start top-to-bottom
   for (var x = 20; x < width-30; x += 60) {
     for (var y = 80; y < height-20; y += 80) {
       var r = random(0,50);
