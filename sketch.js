@@ -1,8 +1,8 @@
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
-  background(220);
+  background(46,58,79);
   strokeWeight(6);
-  frameRate(8);
+  frameRate(4);
 }
 
 function draw() {
@@ -20,8 +20,8 @@ function draw() {
   for (var x = 20; x < width-30; x += 60) {
     for (var y = 80; y < height-20; y += 80) {
       var r = random(0,50);
-      var g = random(200,235);
-      var b = random(100,200);
+      var g = random(135,245);
+      var b = random(100,235);
     stroke(r,g,b);
     line( x, y - 60, x + 60, y);
     }
