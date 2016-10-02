@@ -1,5 +1,5 @@
 var video;
-var aspectRatio = 10;
+var aspectRatio = 20;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -24,14 +24,14 @@ function draw() {
       var a = video.pixels[index+3];
 
       var bright = (r+g+b)/3;
-      var pixelSize = map(bright, 50, 255, 10, 1);
+      var pixelSize = map(bright, 50, 255, aspectRatio*1.15, 2);
 
       noStroke();
 
         if(bright >= 125){
-          fill(47,206,3) //green
+          fill(47,206,3, 255) //green
         } else{
-          fill(255,61,132); //pink
+          fill(255,61,132, 170); //pink
         }
 
       //fill(0);
