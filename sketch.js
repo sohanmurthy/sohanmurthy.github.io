@@ -3,6 +3,7 @@ function setup() {
   background(46,58,79);
   strokeWeight(6);
   frameRate(4);
+  
 }
 
 function draw() {
@@ -27,6 +28,11 @@ function draw() {
     }
   }
 
+}
+
+function windowResized() {
+  resizeCanvas(window.innerWidth, window.innerHeight);
+  background(46,58,79);
 }
 
 // function draw() {
