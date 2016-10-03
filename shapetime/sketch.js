@@ -28,20 +28,34 @@ function draw() {
 
       noStroke();
 
-        if(bright >= 125){
+
+        if(bright > 125){
           fill(47,206,3, 255) //green
-        } else{
+        }
+          //begin gradient to smooth transisition
+          else if(bright >= 125){
+          fill(81, 181, 24, 243)
+        }
+          else if(bright >= 124.75){
+            fill(116, 157, 46, 231)
+        }
+          else if(bright >= 124.5){
+            fill(151, 133, 67, 219)
+        }
+          else if(bright >= 124.25){
+            fill(185, 109, 89, 207)
+        }
+          else if(bright >= 123){
+            fill(220, 85, 110, 195)
+        }
+        //final color
+          else {
           fill(255,61,132, 170); //pink
         }
 
-      //fill(0);
+
        ellipse(x*aspectRatio, y*aspectRatio, pixelSize, pixelSize);
 
     }
   }
 }
-
-// function windowResized() {
-//   resizeCanvas(windowWidth, windowHeight);
-//   //video.size(width/aspectRatio, height/aspectRatio);
-// }
