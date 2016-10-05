@@ -11,6 +11,17 @@ function setup() {
   frameRate(30);
 }
 
+function windowResized() {
+  createCanvas(windowWidth, windowHeight);
+  pixelDensity(1);
+
+  video = createCapture(VIDEO);
+  video.size(width/aspectRatio, height/aspectRatio);
+  video.hide();
+  frameRate(30);
+
+}
+
 function draw() {
   background(255,191,53);
   video.loadPixels();
