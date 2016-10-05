@@ -28,7 +28,7 @@ function draw() {
   loadPixels();
   for (var y = 1; y < video.height; y++) {
     for (var x = 1; x < video.width; x++) {
-      var index = (x + y * video.width)*4;
+      var index = (-x + y * video.width)*4;
       var r = video.pixels[index+0];
       var g = video.pixels[index+1];
       var b = video.pixels[index+2];
