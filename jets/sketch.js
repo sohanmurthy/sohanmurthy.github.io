@@ -40,7 +40,7 @@ function draw() {
     clouds[i].draw();
   }
 
-  var d2 = 10 + (sin(angle + PI/2) * amplitude/3) + amplitude;
+  var d2 = 10 + (sin(angle + PI/2) * (amplitude/3) + amplitude);
   image(jet, (width/2)-80, d2);
   angle += 0.01;
 
