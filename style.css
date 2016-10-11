@@ -18,7 +18,7 @@ strong{
 
 
 /* visited link */
-a:visited {
+a, a:visited {
     color: #74CDC8;
 }
 
