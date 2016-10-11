@@ -1,0 +1,32 @@
+body {
+  margin: 0 auto;
+  max-width: 50em;
+  font-family: "Helvetica", "Arial", sans-serif;
+  line-height: 1.5;
+  padding: 4em 1em;
+  color: #74CDC8;
+  background-color: #000;
+}
+
+
+
+
+h2,
+strong{
+  color: rgba(116,205,200, 0.5);
+}
+
+
+/* visited link */
+a:visited {
+    color: #74CDC8;
+}
+
+/* mouse over link */
+a:hover {
+    color: #F26A67;
+}
+
+ul {
+  list-style-type: none;
+}
