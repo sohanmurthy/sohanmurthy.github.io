@@ -112,7 +112,7 @@ Boid.prototype.render = function() {
   rotate(theta);
   //textSize(screenRatio);
   //text("🐧", 0,0);
-  image(penguin, -20,-10, screenRatio, screenRatio)
+  image(penguin, -20,-25, screenRatio, screenRatio)
   pop();
 }
 
