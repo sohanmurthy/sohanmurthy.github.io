@@ -1,16 +1,31 @@
 var boids = [];
+var screenRatio;
+var screenUpper;
+var screenLower;
 
 function setup() {
-  createCanvas(720, 400);
+  createCanvas(windowWidth, windowHeight);
+  screenRatio = (width * height)/10000;
+  screenUpper = 45;
+  screenLower = 30;
+
+  penguin = loadImage("img/penguin.png");
 
   // Add an initial set of boids into the system
-  for (var i = 0; i < 20; i++) {
+  for (var i = 0; i < 40; i++) {
     boids[i] = new Boid(random(width), random(height));
   }
 }
 
+function windowResized(){
+  createCanvas(windowWidth, windowHeight);
+  screenRatio = (width * height)/10000;
+  screenCutoff = 25;
+
+}
+
 function draw() {
-  background(51);
+  background(200, 245, 255);
   // Run all the boids
   for (var i = 0; i < boids.length; i++) {
     boids[i].run(boids);
@@ -80,14 +95,28 @@ Boid.prototype.seek = function(target) {
   return steer;
 }
 
-// Draw boid as a circle
+// Draw boid as a 🐧
 Boid.prototype.render = function() {
-  // fill(127, 127);
-  // stroke(200);
-  // ellipse(this.position.x, this.position.y, 16, 16);
-  textSize(20);
-  text("🐧", this.position.x, this.position.y);
+
+  if(screenRatio > screenUpper){
+    screenRatio = screenUpper;
+  } else if(screenRatio <= screenLower){
+    screenRatio = screenLower;
+  } else {
+    screenRatio = screenRatio
+  }
+
+  var theta = this.velocity.heading() + radians(180);
+  push();
+  translate(this.position.x,this.position.y);
+  rotate(theta);
+  //textSize(screenRatio);
+  //text("🐧", 0,0);
+  image(penguin, -20,-10, screenRatio, screenRatio)
+  pop();
 }
+
+
 
 // Wraparound
 Boid.prototype.borders = function() {
@@ -100,7 +129,16 @@ Boid.prototype.borders = function() {
 // Separation
 // Method checks for nearby boids and steers away
 Boid.prototype.separate = function(boids) {
-  var desiredseparation = 25.0;
+
+  if(screenRatio > screenUpper){
+    screenRatio = screenUpper;
+  } else if(screenRatio <= screenLower){
+    screenRatio = screenLower;
+  } else {
+    screenRatio = screenRatio
+  }
+
+  var desiredseparation = 25 + (screenRatio/7);
   var steer = createVector(0, 0);
   var count = 0;
   // For every boid in the system, check if it's too close
