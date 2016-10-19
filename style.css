@@ -1,25 +1,27 @@
-body {
+
+canvas{
+  position: absolute; z-index: -1; top: 0px; left: 0px;
+}
+
+
+#maintext {
   margin: 0 auto;
   max-width: 50em;
   font-family: "Helvetica", "Arial", sans-serif;
   line-height: 1.5;
   padding: 4em 1em;
-  color: #74CDC8;
-  background-color: #000;
+  color: #000;
 }
-
-
-
 
 h2,
 strong{
-  color: rgba(116,205,200, 0.5);
+  color: rgba(0,0,0,0.6);
 }
 
 
 /* visited link */
 a, a:visited {
-    color: #74CDC8;
+    color: #000;
 }
 
 /* mouse over link */
