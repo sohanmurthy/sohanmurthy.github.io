@@ -54,7 +54,7 @@ function Sleepy(){
   this.y = random(0-(sleepyCutoff), 0);
   this.sleepySize = 38;
   this.ySpeed = random(1.8,2.2);
-  this.rotateFactor = random(50,120);
+  this.rotateFactor = random(50,120)*random([-1,1]);
 
 
     this.move = function(){
@@ -66,7 +66,7 @@ function Sleepy(){
         this.y = random(0-(sleepyCutoff), 0);
         this.sleepySize = 38;
         this.ySpeed = random(1.8,2.2);
-        this.rotateFactor = random(50,120);
+        this.rotateFactor = random(50,120)*random([-1,1]);
       }
 
     };
@@ -89,7 +89,7 @@ function Coffee(){
   this.y = random(height, height*2);
   this.coffeeSize = 60;
   this.ySpeed = random(1.8,2.2);
-  this.rotateFactor = random(50,120);
+  this.rotateFactor = random(50,120)*random([-1,1]);
 
 
     this.move = function(){
@@ -101,7 +101,7 @@ function Coffee(){
         this.y = random(height, height*2);
         this.coffeeSize = 60;
         this.ySpeed = random(1.8,2.2);
-        this.rotateFactor = random(50,120);
+        this.rotateFactor = random(50,120)*random([-1,1]);
       }
 
     };
@@ -109,7 +109,7 @@ function Coffee(){
     this.display = function(){
       push();
       translate(this.x, this.y);
-      rotate(-(frameCount/this.rotateFactor));
+      rotate(frameCount/this.rotateFactor);
       image(emojiCoffee, -30, -30, this.coffeeSize, this.coffeeSize);
       pop();
 
