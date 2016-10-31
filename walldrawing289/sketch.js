@@ -32,7 +32,7 @@ var boundary;
 function setup(){
 
   createCanvas(windowWidth, windowHeight);
-  background(0,0,0);
+  background(15);
 
   screenRatio = floor((width*height)/10000);
 
