@@ -45,11 +45,11 @@ function DrawLine(){
 
   for(var y = -30; y <= height; y+=63){
 //Then the second drafter tries to copy it (without touching it) using a red marker.
-    renderLine(y, 255, 0, 0);
+    renderLine(y, 222, 33, 56);
 //The third drafter does the same, using a yellow marker.
     renderLine(y+20, 255, 240, 20);
 //The fourth drafter does the same using a blue marker.
-    renderLine(y+42, 0, 90, 240);
+    renderLine(y+42, 17, 100, 215);
   }
 //Then the second drafter followed by the third and fourth copies the last line drawn until the bottom of the wall is reached.
 }
