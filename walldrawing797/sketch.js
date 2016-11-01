@@ -70,10 +70,9 @@ function renderLine(_Y, _R, _G, _B){
   this.yStart = _Y;
 
   for (var x = 0; x < yValues.length; x++) {
-    for (var y = 0; y <= height; y++) {
     stroke(this.r,this.g,this.b, 240);
     vertex(x*xSpacing, yValues[x] + this.yStart);
-    }
+
   }
 
   endShape();
