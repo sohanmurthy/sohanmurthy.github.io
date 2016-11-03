@@ -19,7 +19,7 @@ function setup(){
 }
 
 function draw(){
-  background(255);
+  background(132, 54, 66);
   //line(0,cutoff,width,cutoff);
   for(var i = 0; i < bubbles.length; i++){
     bubbles[i].move();
