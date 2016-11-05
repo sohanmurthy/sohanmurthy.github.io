@@ -20,7 +20,7 @@ function setup(){
 
   segments = 30
   xSpacing = width/segments;
-  yValues = new Array(segments+1);
+  yValues = new Array(segments+2);
 
   calcLine();
 
@@ -37,13 +37,13 @@ function draw(){
 // (In this case, the line is set by a function that generates a series of random y values, stored in an array)
 function calcLine() {
   for (var i = 0; i < yValues.length; i++) {
-    yValues[i] = map(random(0,1), 0, 1, 5,43);
+    yValues[i] = map(random(0,1), 0, 1, 5,100);
   }
 }
 
 function DrawLine(){
 
-  for(var y = -30; y <= height; y+=63){
+  for(var y = -100; y <= height+100; y+=63){
 //Then the second drafter tries to copy it (without touching it) using a red marker.
     renderLine(y, 222, 33, 56);
 //The third drafter does the same, using a yellow marker.
@@ -61,7 +61,7 @@ function renderLine(_Y, _R, _G, _B){
   beginShape();
   noFill();
 
-  strokeWeight(16);
+  strokeWeight(14.4);
 
   this.r = _R;
   this.g = _G;
@@ -69,9 +69,9 @@ function renderLine(_Y, _R, _G, _B){
 
   this.yStart = _Y;
 
-  for (var x = 0; x < yValues.length; x++) {
+  for (var x = -1; x < yValues.length; x++) {
     stroke(this.r,this.g,this.b, 240);
-    vertex(x*xSpacing, yValues[x] + this.yStart);
+    curveVertex(x*xSpacing, yValues[x] + this.yStart);
 
   }
 
