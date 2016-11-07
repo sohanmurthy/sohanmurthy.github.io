@@ -5,10 +5,9 @@ var segments;
 function setup(){
 
   createCanvas(windowWidth, windowHeight);
-  background(36,83,213);
+  background(0,187,45);
 
-
-  segments = 8
+  segments = 8;
   xSpacing = width/segments;
   yValues = new Array(segments+2);
 
@@ -17,25 +16,29 @@ function setup(){
 
 function draw(){
 
-for(var y = -100; y <= height+100; y+=random(60,70)){
+for(var y = -500; y <= height+500; y+=random(20,40)){
     calcLinePerlin();
     renderLine(y,
             //stroke
-            255,255, 255, 255,
+            246,3,0, 255,
             //fill
-            36,83,213, 255);
+            0,187,45, 255);
           }
-  noLoop();
+
+    noLoop();
 
 }
 
 
+
+
 //generates y-values using Perlin noise
 function calcLinePerlin() {
-  noiseSeed(random(0,10));
+  //after some trial and error, I found a few seeds that looked nice and purty
+  noiseSeed(random([2,2,2,2,12,12,22]));
   for (var i = 0; i < yValues.length; i++) {
     this.noiseVal = noise(i);
-    yValues[i] = map(this.noiseVal, 0, 1, 0,300);
+    yValues[i] = map(this.noiseVal, 0, 1, 0,-700);
   }
 }
 
@@ -53,15 +56,17 @@ function renderLine(_Y, _Rstroke, _Gstroke, _Bstroke, _strokeAlpha, _Rfill, _Gfi
   this.bFill = _Bfill;
   this.aFill = _fillAlpha;
 
+  this.jitter = random(10,60);
+
   beginShape();
-  strokeWeight(14.4);
+  strokeWeight(16);
   for (var x = -1; x < yValues.length; x++) {
     stroke(this.rStroke, this.gStroke, this.bStroke, this.aStroke);
     fill(this.rFill, this.gFill, this.bFill, this.aFill);
-    curveVertex(x*xSpacing, yValues[x] + this.yStart);
+    curveVertex(x*(xSpacing+this.jitter), yValues[x] + this.yStart);
   }
 
-  curveTightness(-0.7)
+  curveTightness(-0.1)
   vertex(width+xSpacing,height*2);
   vertex(0, height*2);
   vertex(0-(width/2), height/2);
