@@ -7,7 +7,7 @@ canvas{
 }
 
 
-body {
+#content {
   margin: 0 auto;
   max-width: 50em;
   font-family: "Helvetica", "Arial", sans-serif;
