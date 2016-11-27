@@ -1,8 +1,7 @@
 var video;
 var aspectRatio = 45;
 
-var emojiBright;
-var emojiDark;
+var emojiFlower;
 
 function setup() {
 
